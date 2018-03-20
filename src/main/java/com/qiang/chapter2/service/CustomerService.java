@@ -86,7 +86,7 @@ public class CustomerService {
      * @return
      */
     public boolean createCustomer(Map<String, Object> fieldMap) {
-        return false;
+        return DatabaseHelper.insertEntity(Customer.class, fieldMap);
     }
 
     /**
@@ -95,8 +95,8 @@ public class CustomerService {
      * @param fieldMap
      * @return
      */
-    public boolean updateCustomer(Map<String, Object> fieldMap) {
-        return false;
+    public boolean updateCustomer(long id, Map<String, Object> fieldMap) {
+        return DatabaseHelper.updateEntity(Customer.class, id, fieldMap);
     }
 
     /**
@@ -106,7 +106,7 @@ public class CustomerService {
      * @return
      */
     public boolean deleteCustomer(long id) {
-        return false;
+        return DatabaseHelper.deleteEntity(Customer.class, id);
     }
 
 }
